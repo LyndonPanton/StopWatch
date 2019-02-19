@@ -7,7 +7,29 @@
 	<link rel="stylesheet" type="text/css" href="./css/styles.css" />
 </head>
 <body>
+	<header id="header">
+		<h1 id="title">Timer</h1>
+	</header>
 
+	<main id="app">
+		<span id="hoursTens" class="panel">0</span>
+		<span id="hoursOnes" class="panel">0</span>
+		<span class="colon">:</span>
+		<span id="minutesTens" class="panel">0</span>
+		<span id="minutesOnes" class="panel">0</span>
+		<span class="colon">:</span>
+		<span id="secondsTens" class="panel">0</span>
+		<span id="secondsOnes" class="panel">0</span>
+
+		<button id="start" class="button">Start</button>
+		<button id="stop" class="button">Stop</button>
+		<button id="record" class="button">Record</button>
+		<button id="reset" class="button">Reset</button>
+	</main>
+
+	<footer id="footer">
+		<span id="copyright">&copy; <span id="date"></span> | All Rights Reserved</span>
+	</footer>
 
 	<script src="./js/app.js"></script>
 </body>
