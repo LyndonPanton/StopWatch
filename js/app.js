@@ -70,6 +70,8 @@ resetBtn.addEventListener("click", function() {
 	mT.textContent = 0;
 	hO.textContent = 0;
 	hT.textContent = 0;
+	msH.textContent = 0;
+	msT.textContent = 0;
 });
 
 // When the clear button is clicked...
