@@ -10,9 +10,44 @@ let mT = document.getElementById("minutesTens");
 let hO = document.getElementById("hoursOnes");
 let hT = document.getElementById("hoursTens");
 
-let panels = document.getElementsByClassName("panel");
+let startBtn = document.getElementById("start");
+let stopBtn = document.getElementById("stop");
+let recordBtn = document.getElementById("record");
+let resetBtn = document.getElementById("reset");
 
-let tick = setInterval(startTimer, 1000);
+let records = document.getElementById("records");
+
+let panels = document.getElementsByClassName("panel");
+let buttons = document.getElementsByClassName("button");
+
+let tick;
+
+startBtn.addEventListener("click", function() {
+	tick = setInterval(startTimer, 1000);
+});
+
+stopBtn.addEventListener("click", function() {
+	clearInterval(tick);
+});
+
+recordBtn.addEventListener("click", function() {
+	let recording = document.createElement("span");
+	recording.className = "recording";
+	recording.textContent = `${records.children.length + 1}. ${hT.textContent}${hO.textContent}:${mT.textContent}${mO.textContent}:${sT.textContent}${sO.textContent}`;
+
+	records.appendChild(recording);
+});
+
+resetBtn.addEventListener("click", function() {
+	clearInterval(tick);
+
+	sO.textContent = 0;
+	sT.textContent = 0;
+	mO.textContent = 0;
+	mT.textContent = 0;
+	hO.textContent = 0;
+	hT.textContent = 0;
+});
 
 function startTimer() {
 	if (Number(sO.textContent) < 9) {
