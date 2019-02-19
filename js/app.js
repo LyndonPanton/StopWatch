@@ -10,6 +10,8 @@ let mO = document.getElementById("minutesOnes");
 let mT = document.getElementById("minutesTens");
 let hO = document.getElementById("hoursOnes");
 let hT = document.getElementById("hoursTens");
+let msT = document.getElementById("millisecondsTens");
+let msH = document.getElementById("millisecondsHundreds");
 
 // Select individual button elements
 let startBtn = document.getElementById("start");
@@ -32,7 +34,7 @@ let tick;
 startBtn.addEventListener("click", function() {
 	// Start the timer if it hasn't already been started
 	if (!tick) {
-		tick = setInterval(startTimer, 1000);
+		tick = setInterval(startTimer, 10);
 	}
 });
 
@@ -77,39 +79,51 @@ clearBtn.addEventListener("click", function() {
 
 // Timer logic
 function startTimer() {
-	if (Number(sO.textContent) < 9) {
-		sO.textContent = Number(sO.textContent) + 1;
+	if (Number(msT.textContent) < 9) {
+		msT.textContent = Number(msT.textContent) + 1;
 	} else {
-		sO.textContent = 0;
+		msT.textContent = 0;
 
-		if (Number(sT.textContent) < 5) {
-			sT.textContent = Number(sT.textContent) + 1;
+		if (Number(msH.textContent) < 9) {
+			msH.textContent = Number(msH.textContent) + 1;
 		} else {
-			sT.textContent = 0;
+			msH.textContent = 0;
 
-			if (Number(mO.textContent) < 9) {
-				mO.textContent = Number(mO.textContent) + 1;
+			if (Number(sO.textContent) < 9) {
+				sO.textContent = Number(sO.textContent) + 1;
 			} else {
-				mO.textContent = 0;
+				sO.textContent = 0;
 
-				if (Number(mT.textContent) < 5) {
-					mT.textContent = Number(mT.textContent) + 1;
+				if (Number(sT.textContent) < 5) {
+					sT.textContent = Number(sT.textContent) + 1;
 				} else {
-					mT.textContent = 0;
+					sT.textContent = 0;
 
-					if (Number(hO.textContent) < 9) {
-						hO.textContent = Number(hO.textContent) + 1;
+					if (Number(mO.textContent) < 9) {
+						mO.textContent = Number(mO.textContent) + 1;
 					} else {
-						hO.textContent = 0;
+						mO.textContent = 0;
 
-						if (Number(hT.textContent) < 9) {
-							hT.textContent = Number(hT.textContent) + 1;
+						if (Number(mT.textContent) < 5) {
+							mT.textContent = Number(mT.textContent) + 1;
 						} else {
-							hT.textContent = 0;
-							clearInterval(tick);
+							mT.textContent = 0;
 
-							for (let i = 0; i < panels.length; i++) {
-								panels[i].style.color = "#FF0000";
+							if (Number(hO.textContent) < 9) {
+								hO.textContent = Number(hO.textContent) + 1;
+							} else {
+								hO.textContent = 0;
+
+								if (Number(hT.textContent) < 9) {
+									hT.textContent = Number(hT.textContent) + 1;
+								} else {
+									hT.textContent = 0;
+									clearInterval(tick);
+
+									for (let i = 0; i < panels.length; i++) {
+										panels[i].style.color = "#FF0000";
+									}
+								}
 							}
 						}
 					}
