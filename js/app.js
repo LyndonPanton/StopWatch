@@ -52,7 +52,7 @@ recordBtn.addEventListener("click", function() {
 	// Give it a class
 	recording.className = "recording";
 	// Give it content
-	recording.textContent = `${records.children.length + 1}. ${hT.textContent}${hO.textContent}:${mT.textContent}${mO.textContent}:${sT.textContent}${sO.textContent}`;
+	recording.textContent = `${records.children.length + 1}. ${hT.textContent}${hO.textContent}:${mT.textContent}${mO.textContent}:${sT.textContent}${sO.textContent}:${msH.textContent}${msT.textContent}`;
 
 	// Add element to the records section
 	records.appendChild(recording);
