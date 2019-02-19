@@ -3,6 +3,7 @@ let date = document.getElementById("date");
 let year = (new Date()).getFullYear();
 date.textContent = year;
 
+// Select individual panels
 let sO = document.getElementById("secondsOnes");
 let sT = document.getElementById("secondsTens");
 let mO = document.getElementById("minutesOnes");
@@ -10,37 +11,53 @@ let mT = document.getElementById("minutesTens");
 let hO = document.getElementById("hoursOnes");
 let hT = document.getElementById("hoursTens");
 
+// Select individual button elements
 let startBtn = document.getElementById("start");
 let stopBtn = document.getElementById("stop");
 let recordBtn = document.getElementById("record");
 let resetBtn = document.getElementById("reset");
 
+// Select recordings element
 let records = document.getElementById("records");
 
+// Select panel elements
 let panels = document.getElementsByClassName("panel");
 let buttons = document.getElementsByClassName("button");
 
+// For recording time
 let tick;
 
+// When the start button is clicked...
 startBtn.addEventListener("click", function() {
+	// Start the timer
 	tick = setInterval(startTimer, 1000);
 });
 
+// When the stop button is clicked...
 stopBtn.addEventListener("click", function() {
+	// Stop the timer
 	clearInterval(tick);
 });
 
+// When the record button is clicked...
 recordBtn.addEventListener("click", function() {
+	// Create a span element
 	let recording = document.createElement("span");
+	// Give it a class
 	recording.className = "recording";
+	// Give it content
 	recording.textContent = `${records.children.length + 1}. ${hT.textContent}${hO.textContent}:${mT.textContent}${mO.textContent}:${sT.textContent}${sO.textContent}`;
 
+	// Add element to the records section
 	records.appendChild(recording);
 });
 
+// When the reset button is clicked...
 resetBtn.addEventListener("click", function() {
+	// Stop the timer
 	clearInterval(tick);
 
+	// Reset the timer
 	sO.textContent = 0;
 	sT.textContent = 0;
 	mO.textContent = 0;
@@ -49,6 +66,7 @@ resetBtn.addEventListener("click", function() {
 	hT.textContent = 0;
 });
 
+// Timer logic
 function startTimer() {
 	if (Number(sO.textContent) < 9) {
 		sO.textContent = Number(sO.textContent) + 1;
