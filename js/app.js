@@ -16,6 +16,7 @@ let startBtn = document.getElementById("start");
 let stopBtn = document.getElementById("stop");
 let recordBtn = document.getElementById("record");
 let resetBtn = document.getElementById("reset");
+let clearBtn = document.getElementById("clear");
 
 // Select recordings element
 let records = document.getElementById("records");
@@ -67,6 +68,11 @@ resetBtn.addEventListener("click", function() {
 	mT.textContent = 0;
 	hO.textContent = 0;
 	hT.textContent = 0;
+});
+
+// When the clear button is clicked...
+clearBtn.addEventListener("click", function() {
+	document.getElementById("records").textContent = "";
 });
 
 // Timer logic
