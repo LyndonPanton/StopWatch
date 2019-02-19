@@ -3,14 +3,18 @@ let date = document.getElementById("date");
 let year = (new Date()).getFullYear();
 date.textContent = year;
 
-setInterval(function() {
-	let sO = document.getElementById("secondsOnes");
-	let sT = document.getElementById("secondsTens");
-	let mO = document.getElementById("minutesOnes");
-	let mT = document.getElementById("minutesTens");
-	let hO = document.getElementById("hoursOnes");
-	let hT = document.getElementById("hoursTens");
+let sO = document.getElementById("secondsOnes");
+let sT = document.getElementById("secondsTens");
+let mO = document.getElementById("minutesOnes");
+let mT = document.getElementById("minutesTens");
+let hO = document.getElementById("hoursOnes");
+let hT = document.getElementById("hoursTens");
 
+let panels = document.getElementsByClassName("panel");
+
+let tick = setInterval(startTimer, 1000);
+
+function startTimer() {
 	if (Number(sO.textContent) < 9) {
 		sO.textContent = Number(sO.textContent) + 1;
 	} else {
@@ -30,8 +34,25 @@ setInterval(function() {
 					mT.textContent = Number(mT.textContent) + 1;
 				} else {
 					mT.textContent = 0;
+
+					if (Number(hO.textContent) < 9) {
+						hO.textContent = Number(hO.textContent) + 1;
+					} else {
+						hO.textContent = 0;
+
+						if (Number(hT.textContent) < 9) {
+							hT.textContent = Number(hT.textContent) + 1;
+						} else {
+							hT.textContent = 0;
+							clearInterval(tick);
+
+							for (let i = 0; i < panels.length; i++) {
+								panels[i].style.color = "#FF0000";
+							}
+						}
+					}
 				}
 			}
 		}
 	}
-}, 1000);
+}
