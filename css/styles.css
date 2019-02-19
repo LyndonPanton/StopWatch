@@ -1,0 +1,61 @@
+::-webkit-scrollbar {
+	background: transparent;
+}
+
+.button {
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.recording {
+	display: inline-block;
+	width: 45%;
+	margin-top: 2%;
+	margin-left: 2%;
+	font-size: 20px;
+}
+
+#app {
+	background-color: hsl(300, 100%, 80%);
+	border-radius: 6px;
+	color: hsl(240, 100%, 40%);
+	text-align: center;
+	height: 600px;
+	margin-bottom: 6px;
+	overflow-y: scroll;
+}
+
+#footer {
+	background-color: hsl(202, 100%, 70%);
+	margin-bottom: 0;
+	border-radius: 8px;
+	text-align: center;
+	color: hsl(0, 100%, 100%);
+	font-weight: bold;
+	height: 40px;
+	font-size: 24px;
+	line-height: 35px;
+}
+
+#header {
+	background-color: hsl(202, 100%, 70%);
+	border-radius: 8px;
+	text-align: center;
+	color: hsl(300, 100%, 98%);
+}
+
+#time {
+	font-size: 36px;
+}
+
+@media screen and (min-width: 720px) {
+	.recording {
+		width: 30%;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.recording {
+		width: 22%;
+	}
+}
