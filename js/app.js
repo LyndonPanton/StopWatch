@@ -20,6 +20,18 @@ setInterval(function() {
 			sT.textContent = Number(sT.textContent) + 1;
 		} else {
 			sT.textContent = 0;
+
+			if (Number(mO.textContent) < 9) {
+				mO.textContent = Number(mO.textContent) + 1;
+			} else {
+				mO.textContent = 0;
+
+				if (Number(mT.textContent) < 5) {
+					mT.textContent = Number(mT.textContent) + 1;
+				} else {
+					mT.textContent = 0;
+				}
+			}
 		}
 	}
 }, 1000);
