@@ -29,14 +29,17 @@ let tick;
 
 // When the start button is clicked...
 startBtn.addEventListener("click", function() {
-	// Start the timer
-	tick = setInterval(startTimer, 1000);
+	// Start the timer if it hasn't already been started
+	if (!tick) {
+		tick = setInterval(startTimer, 1000);
+	}
 });
 
 // When the stop button is clicked...
 stopBtn.addEventListener("click", function() {
 	// Stop the timer
 	clearInterval(tick);
+	tick = !tick;
 });
 
 // When the record button is clicked...
