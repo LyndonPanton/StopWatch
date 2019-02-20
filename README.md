@@ -27,4 +27,3 @@
 ![Screenshot 7](./img/Screenshot7.png)
 ![Screenshot 8](./img/Screenshot8.png)
 ![Screenshot 9](./img/Screenshot9.png)
-![Screenshot 10](./img/Screenshot10.png)
