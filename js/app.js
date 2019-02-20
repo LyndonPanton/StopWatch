@@ -47,14 +47,34 @@ stopBtn.addEventListener("click", function() {
 
 // When the record button is clicked...
 recordBtn.addEventListener("click", function() {
-	// Create a span element
+	// Create a span elements
+	let ms = document.createElement("span");
+	let s = document.createElement("span");
+	let m = document.createElement("span");
+	let h = document.createElement("span");
 	let recording = document.createElement("span");
-	// Give it a class
-	recording.className = "recording";
-	// Give it content
-	recording.textContent = `${records.children.length + 1}. ${hT.textContent}${hO.textContent}:${mT.textContent}${mO.textContent}:${sT.textContent}${sO.textContent}:${msH.textContent}${msT.textContent}`;
 
-	// Add element to the records section
+	// Give them classes
+	ms.className = "milliseconds";
+	s.className = "seconds";
+	m.className = "minutes"
+	h.className = "hours";
+	recording.className = "recording";
+
+	// Give them content
+	ms.textContent = `${msH.textContent}${msT.textContent}`;
+	s.textContent = `${sT.textContent}${sO.textContent}:`;
+	m.textContent = `${mT.textContent}${mO.textContent}:`;
+	h.textContent = `${hT.textContent}${hO.textContent}:`;
+	recording.textContent = `${records.children.length + 1}. `;
+
+	// Add times to the recording
+	recording.appendChild(h);
+	recording.appendChild(m);
+	recording.appendChild(s);
+	recording.appendChild(ms);
+
+	// Add recordings element to the records section
 	records.appendChild(recording);
 });
 
