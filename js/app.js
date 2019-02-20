@@ -42,7 +42,7 @@ startBtn.addEventListener("click", function() {
 stopBtn.addEventListener("click", function() {
 	// Stop the timer
 	clearInterval(tick);
-	tick = !tick;
+	tick = false;
 });
 
 // When the record button is clicked...
@@ -93,7 +93,7 @@ resetBtn.addEventListener("click", function() {
 	msH.textContent = 0;
 	msT.textContent = 0;
 
-	tick = !tick;
+	tick = false;
 });
 
 // When the clear button is clicked...
